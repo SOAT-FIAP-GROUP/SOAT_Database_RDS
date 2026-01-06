@@ -4,6 +4,7 @@ data "terraform_remote_state" "network" {
     bucket = local.bucket
     key    = "network/terraform.tfstate"
     region = local.region
+    workspace = "dev"
   }
 }
 
