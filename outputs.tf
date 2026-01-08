@@ -83,3 +83,36 @@ output "db_instance_username_produto" {
   description = "The master username for the RDS DB instance"
   sensitive   = true
 }
+
+
+# --- DB Instance Produção ---
+output "db_instance_id_producao" {
+  value       = aws_db_instance.mydb_producao.id
+  description = "The ID of the RDS DB instance"
+}
+
+output "db_instance_arn_producao" {
+  value       = aws_db_instance.mydb_producao.arn
+  description = "The ARN of the RDS DB instance"
+}
+
+output "db_instance_address_producao" {
+  value       = aws_db_instance.mydb_producao.address
+  description = "The DNS address of the RDS DB instance"
+}
+
+output "db_instance_endpoint_producao" {
+  value       = aws_db_instance.mydb_producao.endpoint
+  description = "The full connection endpoint (host:port) of the RDS DB instance"
+}
+
+output "db_instance_port_producao" {
+  value       = aws_db_instance.mydb_producao.port
+  description = "The port the RDS DB instance is listening on"
+}
+
+output "db_instance_username_producao" {
+  value       = aws_db_instance.mydb_producao.username
+  description = "The master username for the RDS DB instance"
+  sensitive   = true
+}

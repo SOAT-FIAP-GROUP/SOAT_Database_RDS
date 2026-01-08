@@ -13,8 +13,9 @@ variable "local_name" {
   type        = list(string)
   default = [
     "databases",
+    "pedido-app",
     "produto-app",
-    "pedido-app"
+    "producao-app"
   ]
 }
 
