@@ -67,3 +67,18 @@ resource "aws_db_instance" "mydb_produto" {
   skip_final_snapshot    = true
   tags                   = local.tags
 }
+
+
+resource "aws_db_instance" "mydb_producao" {
+  identifier             = local.local_names[3]
+  instance_class         = "db.t3.micro"
+  allocated_storage      = 5
+  engine                 = "mariadb"
+  username               = data.aws_ssm_parameter.db_username.value
+  password               = data.aws_ssm_parameter.db_password.value
+  db_subnet_group_name   = aws_db_subnet_group.mydb.name
+  vpc_security_group_ids = [aws_security_group.rds.id]
+  publicly_accessible    = false
+  skip_final_snapshot    = true
+  tags                   = local.tags
+}
