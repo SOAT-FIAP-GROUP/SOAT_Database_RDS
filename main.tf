@@ -84,19 +84,19 @@ resource "aws_db_instance" "mydb_producao" {
 }
 
 resource "aws_ssm_parameter" "rds_url_produto" {
-  name  = "/produto/rds/url"
+  name  = "SPRING_DATASOURCE_URL_PRODUTO"
   type  = "String"
   value = aws_db_instance.mydb_produto.endpoint
 }
 
 resource "aws_ssm_parameter" "rds_url_pedido" {
-  name  = "/pedido/rds/url"
+  name  = "SPRING_DATASOURCE_URL_PEDIDO"
   type  = "String"
   value = aws_db_instance.mydb_pedido.endpoint
 }
 
 resource "aws_ssm_parameter" "rds_url_producao" {
-  name  = "/producao/rds/url"
+  name  = "SPRING_DATASOURCE_URL_PRODUCAO"
   type  = "String"
   value = aws_db_instance.mydb_producao.endpoint
 }
