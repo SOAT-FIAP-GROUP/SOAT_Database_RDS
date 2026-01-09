@@ -82,3 +82,21 @@ resource "aws_db_instance" "mydb_producao" {
   skip_final_snapshot    = true
   tags                   = local.tags
 }
+
+resource "aws_ssm_parameter" "rds_url_produto" {
+  name  = "/produto/rds/url"
+  type  = "String"
+  value = aws_db_instance.mydb_produto.endpoint
+}
+
+resource "aws_ssm_parameter" "rds_url_pedido" {
+  name  = "/pedido/rds/url"
+  type  = "String"
+  value = aws_db_instance.mydb_pedido.endpoint
+}
+
+resource "aws_ssm_parameter" "rds_url_producao" {
+  name  = "/producao/rds/url"
+  type  = "String"
+  value = aws_db_instance.mydb_producao.endpoint
+}
